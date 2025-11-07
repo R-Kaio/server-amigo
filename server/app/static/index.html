@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./styles/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <title>Dashboard - Monitoramento em Tempo Real</title>
+</head>
+
+<body>
+  <header>
+    <h1>Monitoramento do Servidor</h1>
+    <div class="connection-status">
+      <span id="status-indicator" class="status-dot disconnected"></span>
+      <span id="status-text">Conectando...</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="metrics-container">
+      <div class="metric-card">
+        <span class="metric-title">CPU</span>
+        <div class="current-value" id="cpu-value">--%</div>
+        <div class="chart-container">
+          <canvas id="cpuChart"></canvas>
+        </div>
+      </div>
+
+      <div class="metric-card">
+        <span class="metric-title">Memória</span>
+        <div class="current-value" id="memory-value">--%</div>
+        <div class="chart-container">
+          <canvas id="memoryChart"></canvas>
+        </div>
+      </div>
+
+      <div class="metric-card">
+        <span class="metric-title">Disco</span>
+        <div class="current-value" id="disk-value">--%</div>
+        <div class="chart-container">
+          <canvas id="diskChart"></canvas>
+        </div>
+
+        <div class="io-grid">
+          <div class="io-box">
+            <span class="io-title">Leitura</span>
+            <span class="io-value" id="disk-read-value">---</span>
+          </div>
+          <div class="io-box">
+            <span class="io-title">Escrita</span>
+            <span class="io-value" id="disk-write-value">---</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section about">
+        <h3>Monitoramento do Servidor</h3>
+        <p>
+          Plataforma de visualização de métricas em tempo real, desenvolvida
+          utilizando WebSockets para atualizações automáticas e contínuas,
+          focada em estabilidade e desempenho.
+        </p>
+        <p>
+          Acompanhe a Saúde do seu Servidor sem Demoras. Visualize as métricas
+          essenciais como uso de CPU, memória e disco em tempo real, com
+          atualizações automáticas e contínuas, eliminando a necessidade de
+          recarregar a página.
+        </p>
+      </div>
+
+      <div class="footer-section developers">
+        <h3>Desenvolvedores</h3>
+        <ul class="developer-list">
+          <li>
+            <i class="fas fa-code"></i>
+            <a href="https://github.com/Fabricio-Fontenele" target="_blank">Fabricio Fontenele Vieira</a>
+          </li>
+          <li>
+            <i class="fas fa-code"></i>
+            <a href="https://github.com/fnetgit" target="_blank">Francisco Alves Ribeiro Neto</a>
+          </li>
+          <li>
+            <i class="fas fa-code"></i>
+            <a href="https://github.com/gaboliveira-alt" target="_blank">Gabriel Oliveira Pinto</a>
+          </li>
+          <li>
+            <i class="fas fa-code"></i>
+            <a href="https://github.com/oAnjophb" target="_blank">Ruan Pedro de Araujo Anjos</a>
+          </li>
+          <li>
+            <i class="fas fa-code"></i>
+            <a href="https://github.com/JosueSerejo" target="_blank">Willamy Josué Santos Serejo</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>
+        &copy; <span id="current-year-footer"></span> Todos os direitos
+        reservados.
+      </p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="./scripts/index.js"></script>
+</body>
+
+</html>
