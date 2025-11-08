@@ -1,0 +1,3 @@
+formigarei.com.br {
+    reverse_proxy dashboard:8080
+}
